@@ -8,14 +8,15 @@ import { signInWithPopup } from "firebase/auth";
 
 function Login() {
     const navigate = useNavigate()
-    const [username, setUsername] = useState(null)
-    const [photoUrl, setPhotoUrl] = useState(null)
+    const  [user, setUser] = useState(null);
+
     const signInWithGithub = async () => {
         try {
           const result = await signInWithPopup(auth, provider);
-          setUsername(result.user.displayName);
-          setPhotoUrl(result.user.photoURL);
+          setUser(result.user);
+        
             navigate('/Main');
+           
         } catch (error) {
           console.error(error);
         }
