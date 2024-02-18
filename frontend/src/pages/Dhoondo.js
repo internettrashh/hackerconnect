@@ -53,11 +53,12 @@ function Dhoondo({ username }) {
        
        
        
-        <div >
+        <div style={{display:'flex',flexDirection:'column', alignItems: 'center'}} >
 
-  <h2 style={{margin: '0 !important', position: 'absolute', fontSize: 'inherit', fontWeight: 600, fontFamily: 'inherit', zIndex: 1}}>
+  <h2 style={{margin: '0 !important', fontSize: '70px', fontWeight: 600, fontFamily: 'inherit', zIndex: 3, textAlign: 'center' }}>
       We've curated a community of talented developers you'll love connecting with!
-    </h2>
+  </h2>
+
   {userData && userData.map((user, index) => (
      
     <a href={user.githubProfileUrl} target="_blank" rel="noopener noreferrer" key={index} style={{textDecoration: 'none', color: 'inherit'}}>
@@ -85,7 +86,6 @@ function Dhoondo({ username }) {
     </a>
   ))}
 </div>
-
 
 
 
