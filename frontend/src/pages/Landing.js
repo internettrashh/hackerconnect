@@ -7,6 +7,12 @@ const navigation = useNavigate();
 const Navlogin = () => {
     navigation('/login');
 }
+const navCreators = () => {
+    navigation('/creators');
+}
+const navAbout = () => {
+    navigation('/about');
+}
 
   return (
     <div style={{backgroundColor:'black'}}>
@@ -20,10 +26,10 @@ const Navlogin = () => {
      
         <header style={{width: '1006px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'flex-start', gap: '142px', maxWidth: '100%', textAlign: 'left', fontSize: '32px', color: '#fff', backgroundColor:'transparent',fontFamily: 'Inter'}}>
           <div style={{width: '458px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: '20px', maxWidth: '100%'}}>
-            <div style={{cursor:'pointer',height: '39px', position: 'relative', fontWeight: 500, display: 'inline-block', zIndex: 3}}>
+            <div onClick={navAbout}  style={{cursor:'pointer',height: '39px', position: 'relative', fontWeight: 500, display: 'inline-block', zIndex: 3}}>
               About
             </div>
-            <div style={{cursor:'pointer',height: '39px', position: 'relative', fontWeight: 500, display: 'inline-block', zIndex: 3}}>
+            <div onClick={navCreators} style={{cursor:'pointer',height: '39px', position: 'relative', fontWeight: 500, display: 'inline-block', zIndex: 3}}>
               Creators
             </div>
           </div>

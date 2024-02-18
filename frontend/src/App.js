@@ -16,8 +16,8 @@ function App() {
     <Route path="/Main" element={<Main />} />
     <Route path="/Match" element={<Match />} />
     <Route path="/Pair" element={<Dhoondo />} />
-    <Route path="/about" element={<Creater/>} />
-    <Route path="/creators" element={<About />} />
+    <Route path="/creators" element={<Creater/>} />
+    <Route path="/about" element={<About />} />
   </Routes>
   </BrowserRouter>
   );

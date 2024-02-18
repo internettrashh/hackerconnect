@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import location from '../public/vector16.svg';
 import Dhoondo from './Dhoondo';
@@ -7,13 +7,19 @@ function Match() {
   const location = useLocation();
   const data = location.state ? location.state.Data : null; // Check if state is not null before accessing data
 
-  console.log(data); // Logs the data
+  const [showDhoondo, setShowDhoondo] = useState(false);
 
-  if (!data || !data.data) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowDhoondo(true);
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    return () => clearTimeout(timer); // Clear the timer if the component unmounts before the timer finishes
+  }, []);
 
   return(
+
+    
     <div>
     <meta charSet="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -56,7 +62,7 @@ githubProfilePictureUrl
       </section>
       <div style={{width: '394px', height: '432px', position: 'relative', borderRadius: '50%', backgroundColor: '#83498c', filter: 'blur(350px)', maxWidth: '100%'}} />
     </div>
-    <Dhoondo username={data.data.githubUsername} />
+    {showDhoondo && <Dhoondo username={data.data.githubUsername} />}
   </div>
 
  
