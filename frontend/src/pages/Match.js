@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import location from '../public/vector16.svg';
+import Dhoondo from './Dhoondo';
 
 function Match() {
   const location = useLocation();
@@ -55,7 +56,10 @@ githubProfilePictureUrl
       </section>
       <div style={{width: '394px', height: '432px', position: 'relative', borderRadius: '50%', backgroundColor: '#83498c', filter: 'blur(350px)', maxWidth: '100%'}} />
     </div>
+    <Dhoondo username={data.data.githubUsername} />
   </div>
+
+ 
   )
 }
 

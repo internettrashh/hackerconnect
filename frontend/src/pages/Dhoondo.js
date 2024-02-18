@@ -1,9 +1,41 @@
-import React from 'react'
+import React , {useState,useEffect} from 'react'
 import location from '../public/vector16.svg';
-function Dhoondo() {
-
-
-    
+import { useLocation } from 'react-router-dom';
+function Dhoondo({ username }) {
+    const [data, setData] = useState(null);
+    const [userData, setUserData] = useState(null);
+  
+    useEffect(() => {
+      let authWindow;
+      console.log(username);    
+  
+      const fetchData = async () => {
+        const response = await fetch(`https://bitshackathon2024.vercel.app/connect?username=${username}`);
+         console.log(response.status); // Logs the status code of the response
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const userData = await response.json();
+        setUserData(userData);
+      };
+  
+      const handleAuthentication = async () => {
+        authWindow = window.open('https://bitshackathon2024.vercel.app/auth/github', '_blank');
+  
+        const pollTimer = window.setInterval(async function () {
+            if (authWindow && authWindow.closed !== false) { // Check if authWindow is not null before accessing its closed property
+              window.clearInterval(pollTimer);
+              const data = await fetchData(); // Wait for fetchData to resolve and assign its result to data
+              setData(data); // Set data state
+              authWindow.close();
+            }
+          }, 200);
+      };
+  
+      handleAuthentication();
+    }, [username]);
+  
+    console.log(userData);
   return (
     <div>
         <meta charSet="utf-8" />

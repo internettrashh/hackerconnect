@@ -66,7 +66,7 @@ function Main() { // Receive children as a prop
       </header>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '0px 20px', boxSizing: 'border-box', gap: '47px', minHeight: '228px', maxWidth: '100%'}}>
         <b style={{height: '65px', position: 'relative', display: 'inline-block', flexShrink: 0}}>Let us know more about you</b>
-        <button onClick={handleProceedClick} style={{cursor:'pointer',border: 'none',color:'white',fontSize:'30px',outline: 'none', backgroundColor: '#6b1f95', width: '274px', height: '64px', position: 'relative', borderRadius: '30px', boxShadow: '0px 9px 20px rgba(212, 180, 223, 0.57)'}} >Proceed</button>
+        <button onClick={fetchData} style={{cursor:'pointer',border: 'none',color:'white',fontSize:'30px',outline: 'none', backgroundColor: '#6b1f95', width: '274px', height: '64px', position: 'relative', borderRadius: '30px', boxShadow: '0px 9px 20px rgba(212, 180, 223, 0.57)'}} >Proceed</button>
       </div>
       <section style={{alignSelf: 'stretch', height: '694px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-end', padding: '0px 0px 0px 0px', boxSizing: 'border-box', maxWidth: '100%'}}>
         <div style={{width: '2023px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '0px 0px 0px 0px', boxSizing: 'border-box', maxWidth: '117%', flexShrink: 0}}>
