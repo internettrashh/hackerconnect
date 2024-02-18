@@ -1,36 +1,56 @@
-import React from 'react'
+import React, { useState,useEffect, createContext } from 'react';
 import Mainbg from '../public/Mainbg.jpeg';
+import { useNavigate } from 'react-router-dom';
 
-function Main() {
-  let authWindow; // Declare authWindow outside the function so it can be accessed in fetchData
+export const DataContext = createContext();
+
+function Main() { // Receive children as a prop
+  const [Data, setData] = useState(null);
+  const navigate = useNavigate();
+  let authWindow;
+
+  async function fetchData() {
+    try {
+      const response = await fetch('https://bitshackathon2024.vercel.app/starred');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data);
+      setData(data);
+      if (authWindow) {
+        authWindow.close();
+      }
+      navigate('/Match', { state: { Data: data } }); // Pass data to Match component
+      return data;
+    } catch (error) {
+      console.error('Fetch failed:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log(Data);
+  }, [Data]);
 
   async function handleProceedClick() {
-    // Open a new window where the user logs in with GitHub
     authWindow = window.open('https://bitshackathon2024.vercel.app/auth/github', '_blank');
   
-    // Poll the auth window to check if it has been closed
-    const pollTimer = window.setInterval(function() {
-      if (authWindow.closed !== false) { // !== is required for compatibility with IE
+    const pollTimer = window.setInterval(async function () {
+      if (authWindow.closed !== false) {
         window.clearInterval(pollTimer);
-  
-        // The auth window has been closed, fetch the data
-        fetchData();
+        const data = await fetchData(); // Wait for fetchData to resolve and assign its result to data
+        setData(data); // Set data state
+        authWindow.close();
       }
     }, 200);
   }
   
-  async function fetchData() {
-    const response = await fetch('https://bitshackathon2024.vercel.app/starred');
-    const data = await response.json(); // assuming server responds with json
-    console.log(data);
-  
-    // Check if authWindow is not null or undefined before trying to close it
-    if (authWindow) {
-      authWindow.close();
-    }
-  }
-
   return (
+<div>
     <div style={{backgroundColor:'black'}}>
     <meta charSet="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -46,7 +66,7 @@ function Main() {
       </header>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '0px 20px', boxSizing: 'border-box', gap: '47px', minHeight: '228px', maxWidth: '100%'}}>
         <b style={{height: '65px', position: 'relative', display: 'inline-block', flexShrink: 0}}>Let us know more about you</b>
-        <button onClick={fetchData} style={{cursor:'pointer',border: 'none',color:'white',fontSize:'30px',outline: 'none', backgroundColor: '#6b1f95', width: '274px', height: '64px', position: 'relative', borderRadius: '30px', boxShadow: '0px 9px 20px rgba(212, 180, 223, 0.57)'}} >Proceed</button>
+        <button onClick={handleProceedClick} style={{cursor:'pointer',border: 'none',color:'white',fontSize:'30px',outline: 'none', backgroundColor: '#6b1f95', width: '274px', height: '64px', position: 'relative', borderRadius: '30px', boxShadow: '0px 9px 20px rgba(212, 180, 223, 0.57)'}} >Proceed</button>
       </div>
       <section style={{alignSelf: 'stretch', height: '694px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-end', padding: '0px 0px 0px 0px', boxSizing: 'border-box', maxWidth: '100%'}}>
         <div style={{width: '2023px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '0px 0px 0px 0px', boxSizing: 'border-box', maxWidth: '117%', flexShrink: 0}}>
@@ -56,9 +76,16 @@ function Main() {
             <img style={{position: 'absolute', top: '0px', left: '550px', width: '1219px', height: '635px', objectFit: 'cover', zIndex: 2}} loading="eager" alt="" src={require("../public/businessteamcommunicatingviasocialmedia-748555439-1@2x.png")} />
           </div>
         </div>
+        
+
+
       </section>
     </div>
   </div>
+  <DataContext.Provider value={Data}>
+
+</DataContext.Provider>
+</div>
   )
 }
 
