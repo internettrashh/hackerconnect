@@ -25,9 +25,20 @@ function Login() {
   return (
    
     <div>
-    
     <meta charSet="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <style dangerouslySetInnerHTML={{ __html: `
+      body {
+        margin: 0;
+        line-height: normal;
+      }
+
+      @media (max-width: 768px) { /* Adjust this breakpoint as needed */
+        body {
+          zoom: 0.8; /* Adjust the zoom level to your preference */
+        }
+      }
+    ` }} />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glory:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap" />

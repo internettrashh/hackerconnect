@@ -20,7 +20,28 @@ const navAbout = () => {
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glory:wght@700&display=swap" />
-    <style dangerouslySetInnerHTML={{__html: "\n      body {\n        margin: 0;\n        line-height: normal;\n      }\n    " }} />
+    <style dangerouslySetInnerHTML={{__html: `
+        body {
+          margin: 0;
+          line-height: normal;
+        }
+        @media (max-width: 1366px) {
+          body {
+            zoom: 0.9;
+          }
+        }
+        @media (max-width: 768px) {
+          body {
+            zoom: 0.75;
+          }
+        }
+        @media (max-width: 480px) {
+          body {
+            zoom: 0.6;
+          }
+        }
+      ` }} />
+  
     <div style={{width: '100%', position: 'relative', backgroundColor: '#08090a',backgroundRepeat: 'no-repeat', overflow: 'hidden', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', letterSpacing: 'normal'}}>
       <main style={{flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '35px 83px 449px', boxSizing: 'border-box', gap: '180px', backgroundRepeat: 'no-repeat', backgroundPosition: 'top', maxWidth: '100%'}}>
      
