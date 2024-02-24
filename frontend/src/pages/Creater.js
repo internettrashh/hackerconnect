@@ -52,11 +52,11 @@ function Creater() {
                   </div>
                 </div>
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '0px 20px 0px 19px', gap: '12px'}}>
-                  <img style={{alignSelf: 'stretch', width: '102.4px', position: 'relative', maxHeight: '100%', minHeight: '96px', zIndex: 1}} loading="eager" alt="" src={github}/>
+                <a href='https://github.com/internettrashh'>  <img style={{alignSelf: 'stretch', width: '102.4px', position: 'relative', maxHeight: '100%', minHeight: '96px', zIndex: 1}} loading="eager" alt="" src={github}/></a>
                   <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '3px 11px 0px 0px'}}>
-                    <img style={{width: '90.3px', height: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={twitter} />
+                   <a href='https://twitter.com/naik_nischal'> <img style={{width: '90.3px', height: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={twitter} /></a>
                   </div>
-                  <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={linkedin}/>
+                 <a href='https://www.linkedin.com/in/nischal-naik-a188b0288/'> <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={linkedin}/></a>
                 </div>
               </div>
               <div style={{width: '464px', borderRadius: '30px 0px 30px 0px', backgroundColor: '#0f061a', boxShadow: '0px 5px 10px #83498c', border: '1px solid #83498c', boxSizing: 'border-box', flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', padding: '58px 41px 48px 59px', gap: '27px'}}>
@@ -74,11 +74,11 @@ function Creater() {
                 </div>
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '0px 32px 0px 12px'}}>
                   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '12px'}}>
-                    <img style={{alignSelf: 'stretch', width: '102.4px', position: 'relative', maxHeight: '100%', minHeight: '96px', zIndex: 1}} alt="" src={github}/>
+                   <a href='https://github.com/cazrot335'> <img style={{alignSelf: 'stretch', width: '102.4px', position: 'relative', maxHeight: '100%', minHeight: '96px', zIndex: 1}} alt="" src={github}/></a>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '3px 11px 0px 0px'}}>
-                      <img style={{width: '90.3px', height: '90.3px', position: 'relative', zIndex: 1}} alt="" src={twitter} />
+                  <a href='https://twitter.com/bay_Watcher69'>   <img style={{width: '90.3px', height: '90.3px', position: 'relative', zIndex: 1}} alt="" src={twitter} /></a> 
                     </div>
-                    <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} alt="" src={linkedin}/>
+                   <a href='https://www.linkedin.com/feed/'><img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} alt="" src={linkedin}/></a> 
                   </div>
                 </div>
               </div>
@@ -94,14 +94,14 @@ function Creater() {
                       UI UX designer
                     </div>
                   </div>
-                  <div style={{alignSelf: 'stretch', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-start', gap: '21px'}}>
+                 <div style={{alignSelf: 'stretch', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-start', gap: '21px'}}>
                     <div style={{flex: 1, display: 'flex', flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'flex-start', gap: '9px', minWidth: '131px'}}>
                       <div style={{flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '0px 0px 3px', boxSizing: 'border-box', minWidth: '66px'}}>
-                        <img style={{alignSelf: 'stretch', height: '96px', position: 'relative', maxWidth: '100%', overflow: 'hidden', flexShrink: 0, zIndex: 1}} alt="" src={github}/>
+                      <a href='https://github.com/meheraga'>      <img style={{alignSelf: 'stretch', height: '96px', position: 'relative', maxWidth: '100%', overflow: 'hidden', flexShrink: 0, zIndex: 1}} alt="" src={github}/></a>
                       </div>
-                      <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={figma}/>
+                    <a href='https://www.figma.com/file/tPZx0UwonslwOkDPRpuXYG/DoubtPulse?type=design&node-id=0%3A1&mode=design&t=PlZzCbEI0NJUDUqZ-1'> <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} loading="eager" alt="" src={figma}/></a> 
                     </div>
-                    <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} alt="" src={linkedin}/>
+                   <a href='https://www.linkedin.com/in/meher-aga-6807b5299/'> <img style={{height: '90.3px', width: '90.3px', position: 'relative', zIndex: 1}} alt="" src={linkedin}/></a>
                   </div>
                 </div>
               </div>
