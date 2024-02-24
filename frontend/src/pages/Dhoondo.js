@@ -53,7 +53,7 @@ function Dhoondo({ username }) {
        
        
        
-        <div style={{display:'flex',flexDirection:'column', alignItems: 'center'}} >
+        <div style={{display:'flex',flexDirection:'column', alignItems: 'center', overflow:'hidden'}} >
 
   <h2 style={{margin: '0 !important', fontSize: '70px', fontWeight: 600, fontFamily: 'inherit', zIndex: 3, textAlign: 'center' }}>
       We've curated a community of talented developers you'll love connecting with!
@@ -62,7 +62,7 @@ function Dhoondo({ username }) {
   {userData && userData.map((user, index) => (
      
     <a href={user.githubProfileUrl} target="_blank" rel="noopener noreferrer" key={index} style={{textDecoration: 'none', color: 'inherit'}}>
-      <div style={{position: 'relative', fontWeight: 600, zIndex: 2, width: '3532.33px'}}>
+      <div style={{position: 'relative', fontWeight: 600, zIndex: 2, width: '1600px', marginBottom:'20px'}}>
         <div style={{alignSelf: 'stretch', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start', position: 'relative', maxWidth: '100%', fontSize: '36px', fontFamily: 'Glory'}}>
           <div style={{height: '312px', width: '322px', position: 'absolute', margin: '0 !important', top: '-290px', left: '-41px', borderRadius: '50%', backgroundColor: '#83498c', filter: 'blur(350px)', zIndex: 1}} />
           <div style={{flex: 1, borderRadius: '35px', backgroundColor: '#0f061a', border: '3px solid #83498c', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', padding: '22px 47px 24px', maxWidth: '100%'}}>
